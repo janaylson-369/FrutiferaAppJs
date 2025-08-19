@@ -41,19 +41,20 @@ O projeto foi construído utilizando as seguintes tecnologias:
 
 ## 📂 Estrutura do Projeto
 
-/
+```/
 ├── assets/
-│ ├── css/
-│ │ ├── footer.css
-│ │ └── index.css
-│ └── image/
-│ ├── (imagens do projeto como LOGO.png, etc.)
+│   ├── css/
+│   │   ├── footer.css
+│   │   └── index.css
+│   └── image/
+│       ├── (imagens do projeto como LOGO.png, etc.)
 ├── SRC/
-│ ├── dataset/
-│ ├── cadastroFrut.js
-│ └── index.js
+│   ├── dataset/
+│   ├── cadastroFrut.js
+│   └── index.js
 ├── .gitignore
 ├── cadastroFrut.html
 ├── index.html
 ├── package.json
 └── package-lock.json
+```
