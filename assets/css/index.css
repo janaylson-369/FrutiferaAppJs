@@ -1,0 +1,19 @@
+
+.carousel {
+  max-width: 1000px; /* Aumenta o limite de largura */
+  margin: 40px auto; /* Continua centralizado */
+}
+
+.carousel-item img {
+  width: 100%;        /* Ajusta a imagem à nova largura */
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* cores do nav*/
+.bg-verde-personalizado {
+  background-color: #28a745;
+  color: rgb(0, 0, 0);
+};
+

@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 60px;
+  /* Espaço para o footer */
+}
+
+footer {
+  background-color: green ;
+  color: white;
+
+}
+
+/* estilo do Nav bar */
+ul .nav-link{ 
+  color: black;
+}
+
+.logo-navbar {
+  height: 100px; 
+  width: auto; 
+};
