@@ -58,3 +58,6 @@ O projeto foi construído utilizando as seguintes tecnologias:
 ├── package.json
 └── package-lock.json
 ```
+
+## Vídeo
+ https://youtu.be/gTvxXIWQ7N0
