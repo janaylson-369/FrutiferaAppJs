@@ -1,17 +1,19 @@
-import { fruteirasCard } from './dataset/preparacoes.js';
+import { fruteirasCard } from './dataset/preparacoes.js';// vai importar o array de objetos "fruteirasCard" do arquivo de preparações
 
-let getCartao = (fruteira) => {
-    // objetivo = calcular idade em meses j
-    const dataPlantio = new Date(fruteira.dataPlantio);
-    const hoje = new Date();
-    let meses = ( hoje.getFullYear() - dataPlantio.getFullYear())* 12;
-    meses -= dataPlantio.getMonth();
-    meses += hoje.getMonth();
-    const idadeEmMeses = meses <= 0 ? 0 : meses;
 
-    const dataFormatada = new Date(fruteira.dataPlantio + 'T00:00:00').toLocaleDateString('pt-BR');
+let getCartao = (fruteira) => {// Função responsável por montar o HTML de um card de fruteira vai receber um objeto "fruteira" com os dados e retorna o HTML pronto
 
-    // Retorna o HTML do card
+    const dataPlantio = new Date(fruteira.dataPlantio);// cria um objeto Date com a data de plantio da fruteira
+    const hoje = new Date(); // Data atual
+
+    let meses = (hoje.getFullYear() - dataPlantio.getFullYear()) * 12;// calcula a idade em meses: diferença de anos * 12 + diferença de meses
+    meses -= dataPlantio.getMonth();// subtrai os meses do ano inicial
+    meses += hoje.getMonth();// adiciona os meses do ano atual
+
+    const idadeEmMeses = meses <= 0 ? 0 : meses;// evita que a idade seja negativa se a data de plantio seja no futuro
+    const dataFormatada = new Date(fruteira.dataPlantio + 'T00:00:00').toLocaleDateString('pt-BR');// Converte a data de plantio para o formato brasileiro dd/mm/aaaa e o "T00:00:00" garante que o horário não influencie na conversão
+
+    // Retorna o HTML completo do card, o card irá mostrar imagem, nome popular, nome científico, produção e data do plantio
     return `
     <div class="col">
         <div class="card h-100 shadow-sm">
@@ -31,22 +33,16 @@ let getCartao = (fruteira) => {
     </div>`;
 };
 
-//inserir o HTML do cartão na div principal da pagina
-let setCartaoCol = (cartao) => {
-    let listaFruteirasDiv = document.getElementById('lista-fruteiras');
-    listaFruteirasDiv.insertAdjacentHTML('beforeend', cartao);
+let setCartaoCol = (cartao) => { // essa função insere o HTML do card gerado dentro da div principal da pagina
+    let listaFruteirasDiv = document.getElementById('lista-fruteiras');// Busca no HTML pelo ID 
+    listaFruteirasDiv.insertAdjacentHTML('beforeend', cartao);// "insertAdjacentHTML" insere o conteúdo HTML no final da div existente
 };
 
-//iterar sobre a lista de fruteiras e cria um cartão para cada uma
-let createCartoes = () => {
-
-    for (let item of fruteirasCard ) {
-        // Html completo referente a cada card com o conteúdo.
-        let cartao = getCartao(item);
-
-        // Inserir cartão dentro do código html na div com id lista-fruteiras.
-        setCartaoCol(cartao);
+let createCartoes = () => {// a função vai percorrer a lista de fruteiras e cria um card para cada uma delas
+    for (let item of fruteirasCard) {
+        let cartao = getCartao(item);// vai gerar o HTML de cada card
+        setCartaoCol(cartao);// Insere o card na página
     }
 };
 
-createCartoes();
+createCartoes();// e chama a função para criar todos os cards quando o script for executado
