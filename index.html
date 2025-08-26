@@ -1,50 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Brejo Paraibano</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- importando o CSS do Bootstrap para usar seu sistema de grid e componentes prontos -->
+
     <link rel="stylesheet" href="/assets/css/index.css" />
+    <!-- CSS próprio do projeto, com personalizações de layout e estilos -->
+
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="/assets/image/LOGO.png">
-    <link href="/assets/css/footer.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/index.css">
+    <!-- Ícones do Bootstrap, usados nos botões e elementos visuais -->
+
+    <link rel="icon" type="image/x-icon" href="/assets/image/LOGO.png"><!-- Ícone que aparece na aba do navegador -->
+
+    <link href="/assets/css/footer.css" rel="stylesheet"><!-- estilo css do rodapé. -->
 </head>
 
 <body>
     <header>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg bg-verde-personalizado" >
+        <!-- NAVBAR: barra de navegação principal do site -->
+        <nav class="navbar navbar-expand-lg bg-verde-personalizado">
+            <!-- "navbar-expand-lg" faz com que a barra seja colapsável em telas pequenas -->
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="/assets/image/LOGO.png"
-                        alt="bootstrap" class="logo-navbar">
+                    <img src="/assets/image/LOGO.png" alt="bootstrap"
+                        class="logo-navbar"><!-- logo da aplicação, usada como link para a página inicial -->
                 </a>
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span
+                        class="navbar-toggler-icon"></span><!-- o botão que aparece no modo mobile para expandir o menu -->
                 </button>
 
+                <!-- Itens de navegação do menu -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
-                        <li class="nav-item"><a href="index.html" class="nav-link ">Home</a></li>
-                        <li class="nav-item"><a href="cadastroFrut.html" class="nav-link ">Cadastrarfrutas</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <!-- Link para a página inicial -->
+                        <li class="nav-item"><a href="cadastroFrut.html" class="nav-link">Cadastrarfrutas</a></li>
+                        <!-- Link para a página de cadastro de frutas -->
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- FIM NAVBAR -->
-
+        <!-- FIM DO NAVBAR -->
     </header>
 
-    <!-- CARROSSEL -->
-    <main class="my-4" >
+    <!-- CARROSSEL de imagens, mostra frutas em destaque -->
+    <main class="my-4">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"
             data-bs-pause="false">
+            <!-- indicadores ( os botao em forma de barra abaixo do carrossel que permite navegar entre slides) -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -54,20 +69,25 @@
                     aria-label="Slide 3"></button>
             </div>
 
+
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/assets/image/cestamanga.png" class="d-block w-100" alt="manga" />
+                    <img src="/assets/image/cestamanga.png" class="d-block w-100"
+                        alt="manga" /><!-- Slide 1: imagem de cesta de mangas -->
                 </div>
+
                 <div class="carousel-item">
                     <img src="/assets/image/cestacaju.png" class="d-block w-100"
-                        alt="cajú" />
+                        alt="cajú" /><!-- Slide 2: imagem de cesta de cajus -->
                 </div>
+
                 <div class="carousel-item">
                     <img src="/assets/image/cestaacerola.png" class="d-block w-100"
-                        alt="acerola" />
+                        alt="acerola" /><!-- Slide 3: imagem de cesta de acerolas -->
                 </div>
             </div>
 
+            <!-- Botões de navegação (anterior e próximo) -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -79,54 +99,56 @@
                 <span class="visually-hidden">Próximo</span>
             </button>
         </div>
-        
     </main>
-    
-    <!-- CARD -->
+
+    <!-- LISTA DE CARDS, que será preenchida dinamicamente pelo JavaScript -->
     <div class="container my-5">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="lista-fruteiras">
-            <!-- os cards serao inseridos automaticamente aqui via JS k-->
+            <!-- Os cards das fruteiras serão inseridos aqui via JS  -->
         </div>
     </div>
 
-    <!-- footer -->
-    <footer class=" mt-auto">
+    <!-- RODAPÉ -->
+    <footer class="mt-auto">
         <div class="container">
             <div class="d-flex align-items-center mb-4">
-                <img src="/assets/image/LOGO.png" alt="CafeBr Logo" class="mt-2 logo-navbar">
+                <img src="/assets/image/LOGO.png" alt="CafeBr Logo" class="mt-2 logo-navbar"><!-- logo no rodapé -->
                 <span class="fs-5 fw-bold me-4 ms-2"></span>
-                <ul class="nav col justify-content-end">
-                    <li class="nav-item"><a href="index.html" class="nav-link px-2 ">Home</a></li>                    
-                    <li class="nav-item"><a href="cadastroFrut.html" class="nav-link px-2 ">Cadastrarfrutas</a></li>
+                <ul class="nav col justify-content-end"><!-- links rápidos de navegação -->
+                    <li class="nav-item"><a href="index.html" class="nav-link px-2">Home</a></li>
+                    <li class="nav-item"><a href="cadastroFrut.html" class="nav-link px-2">Cadastrarfrutas</a></li>
                 </ul>
             </div>
-    
+
+            <!-- icones do bootstrap de redes sociais -->
             <section class="mb-4 text-center">
-    
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-facebook"></i></a>
-    
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-twitter"></i></a>
-    
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-instagram"></i></a>
-    
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-linkedin"></i></a>
-    
-                <a class="btn btn-outline-light btn-floating m-1" href="" role="button"><i class="bi bi-github"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
+                        class="bi bi-facebook"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
+                        class="bi bi-twitter"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
+                        class="bi bi-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
+                        class="bi bi-linkedin"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
+                        class="bi bi-github"></i></a>
             </section>
-    
+
+            <!-- links de políticas e direitos autorais -->
             <div class="text-center mb-3">
                 <a href="#" class="text-white me-3 text-decoration-none">Termos e condições</a>
                 <a href="#" class="text-white text-decoration-none">Política de privacidade</a>
             </div>
-    
+
             <div class="text-center mb-2">
                 <p class="mb-1">© 2025 Brejo Paraibano - Todos os direitos reservados</p>
             </div>
         </div>
-    </footer>   
-        
-    <script type="module" src="SRC/index.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </footer>
+
+    <script type="module" src="SRC/index.js"></script><!-- importa o JavaScript principal que gera os cards das fruteiras dinamicamente -->
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script><!-- importa o JavaScript do Bootstrap -->
 </body>
 
 </html>
